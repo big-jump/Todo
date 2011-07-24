@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "TodoItem.h"
 
 @interface RootViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -157,8 +158,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"dueDate"] description];
+    TodoItem *todoItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [todoItem.dueDate description];
 }
 
 - (void)insertNewObject
@@ -166,12 +167,12 @@
     // Create a new instance of the entity managed by the fetched results controller.
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    TodoItem *newTodoItem = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"dueDate"];
-
+    newTodoItem.dueDate = [NSDate date];
+    
     // Save the context.
     NSError *error = nil;
     if (![context save:&error])
