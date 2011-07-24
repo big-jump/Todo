@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB16ABC413DC9BF500640C6E /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB16ABC313DC9BF500640C6E /* TodoItem.m */; };
 		AB53940613DC81EC00DEA619 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB53940513DC81EC00DEA619 /* UIKit.framework */; };
 		AB53940813DC81EC00DEA619 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB53940713DC81EC00DEA619 /* Foundation.framework */; };
 		AB53940A13DC81EC00DEA619 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB53940913DC81EC00DEA619 /* CoreGraphics.framework */; };
@@ -21,20 +22,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB16ABC213DC9BF500640C6E /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
+		AB16ABC313DC9BF500640C6E /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
 		AB53940113DC81EC00DEA619 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB53940513DC81EC00DEA619 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB53940713DC81EC00DEA619 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB53940913DC81EC00DEA619 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AB53940B13DC81EC00DEA619 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AB53940F13DC81EC00DEA619 /* Todo-Info.plist */ = {isa = PBXFileReference; path = "Todo-Info.plist"; sourceTree = "<group>"; };
+		AB53940F13DC81EC00DEA619 /* Todo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Todo-Info.plist"; sourceTree = "<group>"; };
 		AB53941113DC81EC00DEA619 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB53941313DC81EC00DEA619 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AB53941513DC81EC00DEA619 /* Todo-Prefix.pch */ = {isa = PBXFileReference; path = "Todo-Prefix.pch"; sourceTree = "<group>"; };
-		AB53941613DC81EC00DEA619 /* TodoAppDelegate.h */ = {isa = PBXFileReference; path = TodoAppDelegate.h; sourceTree = "<group>"; };
+		AB53941513DC81EC00DEA619 /* Todo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Todo-Prefix.pch"; sourceTree = "<group>"; };
+		AB53941613DC81EC00DEA619 /* TodoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoAppDelegate.h; sourceTree = "<group>"; };
 		AB53941713DC81EC00DEA619 /* TodoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoAppDelegate.m; sourceTree = "<group>"; };
 		AB53941A13DC81EC00DEA619 /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 		AB53941D13DC81EC00DEA619 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		AB53941F13DC81EC00DEA619 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		AB53941F13DC81EC00DEA619 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AB53942013DC81EC00DEA619 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AB53942313DC81EC00DEA619 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +95,8 @@
 				AB53942013DC81EC00DEA619 /* RootViewController.m */,
 				AB53942213DC81EC00DEA619 /* RootViewController.xib */,
 				AB53941913DC81EC00DEA619 /* Todo.xcdatamodeld */,
+				AB16ABC213DC9BF500640C6E /* TodoItem.h */,
+				AB16ABC313DC9BF500640C6E /* TodoItem.m */,
 				AB53940E13DC81EC00DEA619 /* Supporting Files */,
 			);
 			path = Todo;
@@ -172,6 +177,7 @@
 				AB53941813DC81EC00DEA619 /* TodoAppDelegate.m in Sources */,
 				AB53941B13DC81EC00DEA619 /* Todo.xcdatamodeld in Sources */,
 				AB53942113DC81EC00DEA619 /* RootViewController.m in Sources */,
+				AB16ABC413DC9BF500640C6E /* TodoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +295,7 @@
 				AB53942913DC81EC00DEA619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
