@@ -76,7 +76,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
 
     // Configure the cell.
@@ -159,7 +159,15 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     TodoItem *todoItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [todoItem.dueDate description];
+    cell.detailTextLabel.text = [todoItem.dueDate description];
+    cell.textLabel.text = todoItem.name;
+    
+    if ([todoItem.done boolValue] == YES) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 }
 
 - (void)insertNewObject
