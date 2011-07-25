@@ -17,6 +17,7 @@
 
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize dueDateFormatter = __dueDateFormatter;
 
 - (void)viewDidLoad
 {
@@ -76,7 +77,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 
     // Configure the cell.
@@ -153,13 +154,14 @@
 {
     [__fetchedResultsController release];
     [__managedObjectContext release];
+    [__dueDateFormatter release];
     [super dealloc];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     TodoItem *todoItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.detailTextLabel.text = [todoItem.dueDate description];
+    cell.detailTextLabel.text = [self.dueDateFormatter stringFromDate:todoItem.dueDate];
     cell.textLabel.text = todoItem.name;
     
     if ([todoItem.done boolValue] == YES) {
@@ -168,6 +170,21 @@
     else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+}
+
+#pragma mark -
+#pragma Accessor method for NSDateFormatter
+
+- (NSDateFormatter*)dueDateFormatter
+{
+    if (__dueDateFormatter != nil) {
+        return __dueDateFormatter;
+    }
+    
+    __dueDateFormatter = [[NSDateFormatter alloc] init];
+    __dueDateFormatter.dateStyle = NSDateFormatterShortStyle;
+    __dueDateFormatter.timeStyle = NSDateFormatterShortStyle;
+    return __dueDateFormatter;
 }
 
 - (void)insertNewObject
