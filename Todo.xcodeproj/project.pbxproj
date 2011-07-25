@@ -19,6 +19,8 @@
 		AB53941E13DC81EC00DEA619 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB53941C13DC81EC00DEA619 /* MainWindow.xib */; };
 		AB53942113DC81EC00DEA619 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53942013DC81EC00DEA619 /* RootViewController.m */; };
 		AB53942413DC81EC00DEA619 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB53942213DC81EC00DEA619 /* RootViewController.xib */; };
+		ABB721B213DD50D70034969E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB721B013DD50D70034969E /* DetailViewController.m */; };
+		ABB721B313DD50D70034969E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB721B113DD50D70034969E /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		AB53941F13DC81EC00DEA619 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AB53942013DC81EC00DEA619 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AB53942313DC81EC00DEA619 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		ABB721AF13DD50D70034969E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		ABB721B013DD50D70034969E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		ABB721B113DD50D70034969E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,9 @@
 				AB53941913DC81EC00DEA619 /* Todo.xcdatamodeld */,
 				AB16ABC213DC9BF500640C6E /* TodoItem.h */,
 				AB16ABC313DC9BF500640C6E /* TodoItem.m */,
+				ABB721AF13DD50D70034969E /* DetailViewController.h */,
+				ABB721B013DD50D70034969E /* DetailViewController.m */,
+				ABB721B113DD50D70034969E /* DetailViewController.xib */,
 				AB53940E13DC81EC00DEA619 /* Supporting Files */,
 			);
 			path = Todo;
@@ -163,6 +171,7 @@
 				AB53941213DC81EC00DEA619 /* InfoPlist.strings in Resources */,
 				AB53941E13DC81EC00DEA619 /* MainWindow.xib in Resources */,
 				AB53942413DC81EC00DEA619 /* RootViewController.xib in Resources */,
+				ABB721B313DD50D70034969E /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +187,7 @@
 				AB53941B13DC81EC00DEA619 /* Todo.xcdatamodeld in Sources */,
 				AB53942113DC81EC00DEA619 /* RootViewController.m in Sources */,
 				AB16ABC413DC9BF500640C6E /* TodoItem.m in Sources */,
+				ABB721B213DD50D70034969E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
