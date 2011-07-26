@@ -130,6 +130,7 @@
     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     // ...
     // Pass the selected object to the new view controller.
+    detailViewController.detailItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }

@@ -7,8 +7,31 @@
 //
 
 #import "DetailViewController.h"
+#import "TodoItem.h"
 
 @implementation DetailViewController
+
+@synthesize detailItem = __detailItem;
+@synthesize dueDateFormatter = __dueDateFormatter;
+
+- (void)dealloc
+{
+    [__detailItem release];
+    [__dueDateFormatter release];
+    [super dealloc];
+}
+
+- (NSDateFormatter*)dueDateFormatter
+{
+    if (__dueDateFormatter != nil) {
+        return __dueDateFormatter;
+    }
+    
+    __dueDateFormatter = [[NSDateFormatter alloc] init];
+    __dueDateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    __dueDateFormatter.timeStyle = NSDateFormatterShortStyle;
+    return __dueDateFormatter;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -77,16 +100,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,11 +116,26 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
+    CGRect textFieldRect = CGRectMake(0, 0, 200, 21);
     
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"name";
+        UITextField *nameField = [[UITextField alloc] initWithFrame:textFieldRect];
+        cell.accessoryView = nameField;
+        nameField.text = self.detailItem.name;
+        [nameField release];
+    }
+    else {
+        cell.textLabel.text = @"due date";
+        UITextField *dateField = [[UITextField alloc] initWithFrame:textFieldRect];
+        cell.accessoryView = dateField;
+        dateField.text = [self.dueDateFormatter stringFromDate:self.detailItem.dueDate];
+        [dateField release];
+    }
     return cell;
 }
 

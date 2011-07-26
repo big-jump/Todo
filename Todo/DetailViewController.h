@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class TodoItem;
+
 @interface DetailViewController : UITableViewController
 
+@property (nonatomic, retain) TodoItem *detailItem;
+@property (nonatomic, retain) NSDateFormatter *dueDateFormatter;
 @end
