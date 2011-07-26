@@ -13,12 +13,26 @@
 
 @synthesize detailItem = __detailItem;
 @synthesize dueDateFormatter = __dueDateFormatter;
+@synthesize dueDatePicker = __duedatePicker;
 
 - (void)dealloc
 {
     [__detailItem release];
     [__dueDateFormatter release];
+    [__duedatePicker release];
+    
     [super dealloc];
+}
+
+- (IBAction)dateDidChange:(id)sender
+{
+    UIDatePicker *datePicker = (UIDatePicker*)sender;
+    self.detailItem.dueDate = datePicker.date;
+    
+    NSIndexPath *dueDateIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:dueDateIndexPath];
+    UITextField *dateTextField = (UITextField*)cell.accessoryView;
+    dateTextField.text = [self.dueDateFormatter stringFromDate:self.detailItem.dueDate];
 }
 
 - (NSDateFormatter*)dueDateFormatter
@@ -134,6 +148,7 @@
         UITextField *dateField = [[UITextField alloc] initWithFrame:textFieldRect];
         cell.accessoryView = dateField;
         dateField.text = [self.dueDateFormatter stringFromDate:self.detailItem.dueDate];
+        dateField.inputView = self.dueDatePicker;
         [dateField release];
     }
     return cell;

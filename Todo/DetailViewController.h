@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) TodoItem *detailItem;
 @property (nonatomic, retain) NSDateFormatter *dueDateFormatter;
+@property (nonatomic, retain) IBOutlet UIDatePicker *dueDatePicker;
+- (IBAction)dateDidChange:(id)sender;
 @end
