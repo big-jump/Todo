@@ -19,6 +19,9 @@
 		AB53941E13DC81EC00DEA619 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB53941C13DC81EC00DEA619 /* MainWindow.xib */; };
 		AB53942113DC81EC00DEA619 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB53942013DC81EC00DEA619 /* RootViewController.m */; };
 		AB53942413DC81EC00DEA619 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB53942213DC81EC00DEA619 /* RootViewController.xib */; };
+		AB9B03AF13DF951B00D0D5A3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9B03AE13DF951B00D0D5A3 /* Default@2x.png */; };
+		AB9B03B213DF966700D0D5A3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9B03B113DF966700D0D5A3 /* Icon@2x.png */; };
+		AB9B03B413DF966A00D0D5A3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9B03B313DF966A00D0D5A3 /* Icon.png */; };
 		ABB721B213DD50D70034969E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB721B013DD50D70034969E /* DetailViewController.m */; };
 		ABB721B313DD50D70034969E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB721B113DD50D70034969E /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,9 @@
 		AB53941F13DC81EC00DEA619 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AB53942013DC81EC00DEA619 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AB53942313DC81EC00DEA619 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		AB9B03AE13DF951B00D0D5A3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AB9B03B113DF966700D0D5A3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		AB9B03B313DF966A00D0D5A3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		ABB721AF13DD50D70034969E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		ABB721B013DD50D70034969E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		ABB721B113DD50D70034969E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -65,6 +71,9 @@
 		AB5393F613DC81EC00DEA619 = {
 			isa = PBXGroup;
 			children = (
+				AB9B03B313DF966A00D0D5A3 /* Icon.png */,
+				AB9B03B113DF966700D0D5A3 /* Icon@2x.png */,
+				AB9B03AE13DF951B00D0D5A3 /* Default@2x.png */,
 				AB53940D13DC81EC00DEA619 /* Todo */,
 				AB53940413DC81EC00DEA619 /* Frameworks */,
 				AB53940213DC81EC00DEA619 /* Products */,
@@ -172,6 +181,9 @@
 				AB53941E13DC81EC00DEA619 /* MainWindow.xib in Resources */,
 				AB53942413DC81EC00DEA619 /* RootViewController.xib in Resources */,
 				ABB721B313DD50D70034969E /* DetailViewController.xib in Resources */,
+				AB9B03AF13DF951B00D0D5A3 /* Default@2x.png in Resources */,
+				AB9B03B213DF966700D0D5A3 /* Icon@2x.png in Resources */,
+				AB9B03B413DF966A00D0D5A3 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
