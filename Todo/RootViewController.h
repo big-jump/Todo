@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSDateFormatter *dueDateFormatter;
+- (void)toggleDone:(UISwipeGestureRecognizer*)sender;
 
 @end

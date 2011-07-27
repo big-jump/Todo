@@ -80,11 +80,28 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleDone:)];
+        [cell addGestureRecognizer:swipeGestureRecognizer];
+        [swipeGestureRecognizer release];
     }
 
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)toggleDone:(UISwipeGestureRecognizer*)sender;
+{
+    UITableViewCell *cell = (UITableViewCell*)sender.view;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    TodoItem *todo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    // The done property is an NSNumber
+    if ([todo.done boolValue] == NO) {
+        todo.done = [NSNumber numberWithBool:YES];
+    }
+    else {
+        todo.done = [NSNumber numberWithBool:NO];
+    }
 }
 
 /*
