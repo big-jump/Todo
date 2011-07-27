@@ -69,12 +69,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.title = @"Details";
 }
 
 - (void)viewDidUnload
@@ -97,6 +93,11 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    NSIndexPath *nameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:nameIndexPath];
+    UITextField *nameTextField = (UITextField*)cell.accessoryView;
+    self.detailItem.name = nameTextField.text;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -139,6 +140,7 @@
     if (indexPath.row == 0) {
         cell.textLabel.text = @"name";
         UITextField *nameField = [[UITextField alloc] initWithFrame:textFieldRect];
+        nameField.clearButtonMode = UITextFieldViewModeWhileEditing;
         cell.accessoryView = nameField;
         nameField.text = self.detailItem.name;
         [nameField release];
@@ -197,14 +199,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UITextField *textField = (UITextField*)cell.accessoryView;
+    [textField becomeFirstResponder];
 }
 
 @end
